@@ -5,8 +5,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    padding: 10,
+    paddingHorizontal: 15,
     paddingTop: 40,
+    paddingBottom: 25,
+  },
+  comments: {
+    color: "#FAC800",
+    fontWeight: "bold",
   },
 });
 

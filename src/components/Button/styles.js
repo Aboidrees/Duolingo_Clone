@@ -2,30 +2,42 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#58CC02",
-    height: 50,
     marginVertical: 10,
+    height: 70,
+    alignSelf: "stretch",
+    justifyContent: "flex-end",
+  },
+  button: {
+    height: 50,
+    backgroundColor: "#58CC02",
+    paddingVertical: 10,
 
     alignSelf: "stretch",
     justifyContent: "center",
     alignItems: "center",
 
     //border
-    borderRadius: 5,
+    borderRadius: 10,
+    borderWidth: 2,
     borderBottomWidth: 5,
     borderColor: "#57A600",
   },
-  disabledContainer: {
+  disabledButton: {
     backgroundColor: "lightgray",
-    borderColor: "grey",
+    borderColor: "#bebebe",
+    borderBottomWidth: 2,
   },
   text: {
-    fontSize: 20,
+    fontSize: 16,
     color: "white",
-    fontWeight: "bold",
-
+    fontWeight: "600",
     borderColor: "white",
     borderBottomWidth: 1,
+    textDecorationLine: "none",
+  },
+  disabledText: {
+    color: "grey",
+    textDecorationLine: "none",
   },
 });
 

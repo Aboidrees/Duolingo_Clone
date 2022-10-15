@@ -1,16 +1,27 @@
 import { PropTypes } from "prop-types";
-import { Pressable, Text } from "react-native";
+import { useState } from "react";
+import { Pressable, Text, View } from "react-native";
 import styles from "./styles";
 
 const Button = ({ text, onPress, disabled }) => {
+  const [pressed, setPressed] = useState(false);
+
   return (
-    <Pressable
-      onPress={onPress}
-      style={[styles.container, disabled ? styles.disabledContainer : {}]}
-      disabled={disabled}
-    >
-      <Text style={styles.text}>{text}</Text>
-    </Pressable>
+    <View style={styles.container}>
+      <Pressable
+        onPress={onPress}
+        onPressIn={(event) => setPressed(true)}
+        onPressOut={(event) => setPressed(false)}
+        style={[
+          styles.button,
+          disabled ? styles.disabledButton : {},
+          pressed ? { borderWidth: 2, borderBottomWidth: 2, height: 45 } : {},
+        ]}
+        disabled={disabled}
+      >
+        <Text style={[styles.text, disabled ? styles.disabledText : {}]}>{text}</Text>
+      </Pressable>
+    </View>
   );
 };
 
